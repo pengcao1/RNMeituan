@@ -2,7 +2,7 @@
 export default {
     home:{
         homeTitle:"HomeScreen",
-        memoTitle:"MemoScreen",
+        memoTitle:"ILikeScreen",
         profileTitle:"Profile",
         statisTitle:"Statistics",
     },

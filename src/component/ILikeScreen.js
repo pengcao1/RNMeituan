@@ -2,7 +2,7 @@ import React from 'react';
 import {Text, View, StyleSheet} from "react-native";
 import color from "./Color"
 
-export default class MemoScreen extends React.Component{
+export default class ILikeScreen extends React.Component{
     constructor(props) {
         super(props)
     }
@@ -10,7 +10,7 @@ export default class MemoScreen extends React.Component{
         return(
             <View stlye={styles.container}>
                 <Text>
-                    This is Memo
+                    This is ILikeScreen
                 </Text>
             </View>
         );

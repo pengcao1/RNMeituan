@@ -1,7 +1,7 @@
 import React                      from 'react';
 import {Dimensions,}              from 'react-native';
 import color                      from './Color'  //颜色样式
-import MemoScreen                 from "./MemoScreen";
+import ILikeScreen                from "./ILikeScreen";
 import Ionicons                   from 'react-native-vector-icons/Ionicons'
 import Statistics                 from "./Statistics";
 import {createBottomTabNavigator} from "react-navigation";
@@ -25,28 +25,14 @@ export default  HomeNavigator = createBottomTabNavigator({
             ),
         }
     },
-    Memorandum: {
-        screen: MemoScreen,
+    ILike: {
+        screen: ILikeScreen,
         navigationOptions: {
             tabBarPosition: 'bottom',
             tabBarLabel: I18n.t("home.memoTitle"),
             tabBarIcon: ({tintColor, focused}) => (
                 <Ionicons
                     name={focused ? 'ios-paper' : 'ios-paper-outline'}
-                    size={26}
-                    style={{color: tintColor}}
-                />
-            ),
-        }
-    },
-    Statistics: {
-        screen: Statistics,
-        navigationOptions: {
-            tabBarLabel:I18n.t("home.statisTitle"),
-            tabBarPosition: 'bottom',
-            tabBarIcon: ({tintColor, focused}) => (
-                <Ionicons
-                    name={focused ? 'ios-stats' : 'ios-stats-outline'}
                     size={26}
                     style={{color: tintColor}}
                 />
