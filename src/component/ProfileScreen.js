@@ -1,5 +1,6 @@
 import React from 'react';
-import {Text, View} from "react-native";
+import {Text, View, StyleSheet} from "react-native";
+import color from "./Color"
 
 export default class ProfileScreen extends React.Component{
     constructor(props) {
@@ -7,7 +8,7 @@ export default class ProfileScreen extends React.Component{
     }
     render(){
         return(
-            <View>
+            <View style={styles.container}>
                 <Text>
                     This is ProfileScreen
                 </Text>
@@ -15,3 +16,13 @@ export default class ProfileScreen extends React.Component{
         );
     }
 }
+const styles = StyleSheet.create({
+        container: {
+            flex: 1,
+            backgroundColor: color.background,
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize:30
+        }
+    }
+);

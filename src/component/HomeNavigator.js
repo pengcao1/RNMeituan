@@ -66,18 +66,18 @@ export default  HomeNavigator = createBottomTabNavigator({
     //切换是否有动画
     animationEnabled: true,
     //进入App的首页面
-    initialRouteName: 'Home',
+    initialRouteName: 'ILike',
     //对于导航的设置
     tabBarOptions: {
         //android特有下划线的颜色1
-        indicatorStyle: {height: 0},
+        indicatorStyle: {height: 1},
         //文字的样式
         labelStyle: {
             fontSize: 10
         },
         //对于导航的stytles
         style :{
-            borderTopColor:'#ebebeb',
+            borderTopColor:'#ff00eb',
             borderTopWidth:1,
             backgroundColor:'white',
             height:Dimensions.get('window').height*0.08,

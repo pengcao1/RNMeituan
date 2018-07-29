@@ -7,9 +7,10 @@ export default class ILikeScreen extends React.Component{
         super(props)
     }
     render(){
+        console.log("in ILikeScreen render func");
         return(
-            <View stlye={styles.container}>
-                <Text>
+            <View style={styles.container}>
+                <Text >
                     This is ILikeScreen
                 </Text>
             </View>
@@ -22,6 +23,7 @@ const styles = StyleSheet.create({
             backgroundColor: color.background,
             alignItems: 'center',
             justifyContent: 'center',
+            fontSize:20
         }
     }
 );
