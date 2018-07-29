@@ -1,16 +1,16 @@
-import React, {Component} from 'react';
+import React, {Component}         from 'react';
 import {
     StyleSheet,
     Dimensions,
     Platform
-} from 'react-native';
-import color from './Color'  //颜色样式
-import Memo from "./Memo";
-import Ionicons from 'react-native-vector-icons/Ionicons'
-import Statistics from "./Statistics";
+}                                 from 'react-native';
+import color                      from './Color'  //颜色样式
+import Memo                       from "./Memo";
+import Ionicons                   from 'react-native-vector-icons/Ionicons'
+import Statistics                 from "./Statistics";
 import {createBottomTabNavigator} from "react-navigation";
-import Home from "./Home";
-import My from "./My"
+import Home                       from "./Home";
+import ProfileScreen              from "./ProfileScreen"
 
 export default  Tab = createBottomTabNavigator({
     Home: {
@@ -57,7 +57,7 @@ export default  Tab = createBottomTabNavigator({
         }
     },
     My: {
-        screen: My,
+        screen: ProfileScreen,
         navigationOptions: {
             tabBarLabel: '我的',
             tabBarPosition: 'bottom',
