@@ -7,7 +7,7 @@ import Statistics                 from "./Statistics";
 import {createBottomTabNavigator} from "react-navigation";
 import HomeScreen                 from "./HomeScreen";
 import ProfileScreen              from "./ProfileScreen";
-import I18n                       from "../src-modules/i18n"
+import I18n                       from "../../src-modules/i18n"
 
 export default  HomeNavigator = createBottomTabNavigator({
     Home: {
