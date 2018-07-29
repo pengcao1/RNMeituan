@@ -9,15 +9,16 @@ import Memo                       from "./Memo";
 import Ionicons                   from 'react-native-vector-icons/Ionicons'
 import Statistics                 from "./Statistics";
 import {createBottomTabNavigator} from "react-navigation";
-import Home                       from "./Home";
-import ProfileScreen              from "./ProfileScreen"
+import HomeScreen                 from "./HomeScreen";
+import ProfileScreen              from "./ProfileScreen";
+import I18n                       from "../src-modules/i18n"
 
 export default  Tab = createBottomTabNavigator({
     Home: {
-        screen: Home,
+        screen: HomeScreen,
         navigationOptions: {
             tabBarPosition: 'bottom',
-            tabBarLabel: '首页',
+            tabBarLabel: I18n.t("home.homeTitle"),
             showLabel:false,
             tabBarIcon: ({tintColor, focused}) => (
                 <Ionicons
@@ -32,7 +33,7 @@ export default  Tab = createBottomTabNavigator({
         screen: Memo,
         navigationOptions: {
             tabBarPosition: 'bottom',
-            tabBarLabel: '备忘',
+            tabBarLabel: I18n.t("home.memoTitle"),
             tabBarIcon: ({tintColor, focused}) => (
                 <Ionicons
                     name={focused ? 'ios-paper' : 'ios-paper-outline'}
@@ -45,7 +46,7 @@ export default  Tab = createBottomTabNavigator({
     Statistics: {
         screen: Statistics,
         navigationOptions: {
-            tabBarLabel: '统计',
+            tabBarLabel:I18n.t("home.statisTitle"),
             tabBarPosition: 'bottom',
             tabBarIcon: ({tintColor, focused}) => (
                 <Ionicons
@@ -59,7 +60,7 @@ export default  Tab = createBottomTabNavigator({
     My: {
         screen: ProfileScreen,
         navigationOptions: {
-            tabBarLabel: '我的',
+            tabBarLabel: I18n.t("home.profileTitle"),
             tabBarPosition: 'bottom',
             tabBarIcon: ({tintColor, focused}) => (
                 <Ionicons

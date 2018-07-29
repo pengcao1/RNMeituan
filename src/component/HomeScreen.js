@@ -14,7 +14,7 @@ import Jump from './Jump'
 
 type Props = {};
 
-export default class Home extends Component<Props> {
+export default class HomeScreen extends Component<Props> {
     constructor(props) {
         super(props)
         this.state = {}
