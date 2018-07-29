@@ -1,66 +1,20 @@
 import React, {Component} from 'react';
-import {
-    StyleSheet,
-    Image,
-    View,
-    TouchableOpacity,
-    Dimensions,
-    Text,
-    Platform,
-    Button,
-} from 'react-native';
+import {StyleSheet, View,Dimensions,Text, Platform} from 'react-native';
 import color from './Color'
-import Jump from './Jump'
-
 type Props = {};
 
 export default class HomeScreen extends Component<Props> {
     constructor(props) {
         super(props)
-        this.state = {}
     }
 
     render() {
         const {navigation} = this.props;
         return (
             <View style={styles.container}>
-                <View style={styles.navBar}>
-                    <View style={styles.navBarButton}>
-                        <TouchableOpacity
-                            onPress={() => {
-                                navigation.navigate('Positioning')
-                            }}
-                        >
-                            <Text style={styles.leftButtom}>定位</Text>
-                        </TouchableOpacity>
-                    </View>
-                    <View style={styles.navBarTitleContainer}>
-                        <Text style={styles.title}>首页</Text>
-                    </View>
-                    <View style={styles.navBarButton}>
-                        <TouchableOpacity>
-                            <Text style={styles.rightButtom}>消息</Text>
-                        </TouchableOpacity>
-                    </View>
-                </View>
-                <Image
-                    style={styles.topImg}
-                    source={require("../img/skill-restaurant.png")}
-                />
-                <View style={styles.mid}>
-                    <TouchableOpacity style={styles.icon}
-                                      onPress={() =>
-                                          this.props.navigation.navigate('Jump')
-                                      }
-                    >
-                        <Image
-                            style={styles.iconImg}
-                            source={{uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png'}}
-                        />
-                        <Text>热门</Text>
-                    </TouchableOpacity>
-
-                </View>
+                <Text>
+                    This is HomeScreen and from {navigation.from}
+                </Text>
             </View>
         );
     }
@@ -68,8 +22,10 @@ export default class HomeScreen extends Component<Props> {
 
 const styles = StyleSheet.create({
     container: {
-        // flex: 1,
+        flex: 1,
         backgroundColor: color.background,
+        alignItems:'center',
+        justifyContent:'center'
     },
     navBar: {
         flexDirection: 'row',

@@ -1,11 +1,7 @@
-import React, {Component}         from 'react';
-import {
-    StyleSheet,
-    Dimensions,
-    Platform
-}                                 from 'react-native';
+import React                      from 'react';
+import {Dimensions,}              from 'react-native';
 import color                      from './Color'  //颜色样式
-import Memo                       from "./Memo";
+import MemoScreen                 from "./MemoScreen";
 import Ionicons                   from 'react-native-vector-icons/Ionicons'
 import Statistics                 from "./Statistics";
 import {createBottomTabNavigator} from "react-navigation";
@@ -13,7 +9,7 @@ import HomeScreen                 from "./HomeScreen";
 import ProfileScreen              from "./ProfileScreen";
 import I18n                       from "../src-modules/i18n"
 
-export default  Tab = createBottomTabNavigator({
+export default  HomeNavigator = createBottomTabNavigator({
     Home: {
         screen: HomeScreen,
         navigationOptions: {
@@ -30,7 +26,7 @@ export default  Tab = createBottomTabNavigator({
         }
     },
     Memorandum: {
-        screen: Memo,
+        screen: MemoScreen,
         navigationOptions: {
             tabBarPosition: 'bottom',
             tabBarLabel: I18n.t("home.memoTitle"),
@@ -57,7 +53,7 @@ export default  Tab = createBottomTabNavigator({
             ),
         }
     },
-    My: {
+    Profile: {
         screen: ProfileScreen,
         navigationOptions: {
             tabBarLabel: I18n.t("home.profileTitle"),
