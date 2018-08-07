@@ -13,9 +13,9 @@ export default class HomeScreen extends Component<Props> {
         const {navigation} = this.props;
         return (
             <View style={styles.container}>
-                <Text>
-                    This is HomeScreen and from {navigation.from}
-                </Text>
+                <ClassItem/>
+                <ClassItem/>
+                <ClassItem/>
                 <ClassItem/>
             </View>
         );
@@ -26,7 +26,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: color.background,
-        alignItems:'center',
-        justifyContent:'center'
+        flexDirection:'column'
     },
 });

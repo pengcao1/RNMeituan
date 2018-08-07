@@ -1,6 +1,10 @@
 import * as React                                  from "react";
 import {Image, StyleSheet, Text, TouchableOpacity} from "react-native";
 
+interface IClassItem {
+    iconUrl?: string;
+    descrText?: string;
+}
 
 export class ClassItem extends React.Component {
 
@@ -18,6 +22,7 @@ export class ClassItem extends React.Component {
 }
 const  styles = StyleSheet.create({
     container:{
-        flex:1
+        flex:1,
+        alignItems:'center',
     }
 });
