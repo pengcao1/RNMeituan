@@ -3,7 +3,6 @@ import {Dimensions,}              from 'react-native';
 import color                      from './Color'  //颜色样式
 import ILikeScreen                from "./ILikeScreen";
 import Ionicons                   from 'react-native-vector-icons/Ionicons'
-import Statistics                 from "./Statistics";
 import {createBottomTabNavigator} from "react-navigation";
 import HomeScreen                 from "./HomeScreen";
 import ProfileScreen              from "./ProfileScreen";
@@ -25,20 +24,7 @@ export default  HomeNavigator = createBottomTabNavigator({
             ),
         }
     },
-    ILike: {
-        screen: ILikeScreen,
-        navigationOptions: {
-            tabBarPosition: 'bottom',
-            tabBarLabel: I18n.t("home.memoTitle"),
-            tabBarIcon: ({tintColor, focused}) => (
-                <Ionicons
-                    name={focused ? 'ios-paper' : 'ios-paper-outline'}
-                    size={26}
-                    style={{color: tintColor}}
-                />
-            ),
-        }
-    },
+
     Profile: {
         screen: ProfileScreen,
         navigationOptions: {
@@ -47,6 +33,20 @@ export default  HomeNavigator = createBottomTabNavigator({
             tabBarIcon: ({tintColor, focused}) => (
                 <Ionicons
                     name={focused ? 'ios-person' : 'ios-person-outline'}
+                    size={26}
+                    style={{color: tintColor}}
+                />
+            ),
+        }
+    },
+    ILike: {
+        screen: ILikeScreen,
+        navigationOptions: {
+            tabBarPosition: 'bottom',
+            tabBarLabel: I18n.t("home.memoTitle"),
+            tabBarIcon: ({tintColor, focused}) => (
+                <Ionicons
+                    name={focused ? 'ios-paper' : 'ios-paper-outline'}
                     size={26}
                     style={{color: tintColor}}
                 />
@@ -66,7 +66,7 @@ export default  HomeNavigator = createBottomTabNavigator({
     //切换是否有动画
     animationEnabled: true,
     //进入App的首页面
-    initialRouteName: 'ILike',
+    initialRouteName: 'Home',
     //对于导航的设置
     tabBarOptions: {
         //android特有下划线的颜色1

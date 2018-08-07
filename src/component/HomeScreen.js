@@ -1,6 +1,7 @@
-import React, {Component} from 'react';
+import React, {Component}                           from 'react';
 import {StyleSheet, View,Dimensions,Text, Platform} from 'react-native';
-import color from './Color'
+import color                                        from './Color'
+import {ClassItem}                                  from "../ui/ClassItem";
 type Props = {};
 
 export default class HomeScreen extends Component<Props> {
@@ -15,6 +16,7 @@ export default class HomeScreen extends Component<Props> {
                 <Text>
                     This is HomeScreen and from {navigation.from}
                 </Text>
+                <ClassItem/>
             </View>
         );
     }
