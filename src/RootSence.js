@@ -12,7 +12,6 @@ import NearBySence from './NearBy/NearBySence'
 import OrderSence from './Order/OrderSnece'
 import MineSence from './Mine/MineSence'
 import Color from './ui/Color'
-import WebSence from './web/WebSence'
 
 class RootSence extends PureComponent{
     render(){
