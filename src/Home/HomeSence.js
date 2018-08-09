@@ -1,7 +1,7 @@
 /**
  */
 
- import React, {PureComponent} from 'react'
+ import React, {Component} from 'react'
  import {StyleSheet, View, Image, Text} from 'react-native'
 
  type Props = {
@@ -11,7 +11,12 @@
 
  }
 
- class HomeSence extends PureComponent<Props,State>{
+ class HomeSence extends React.Component<Props,State>{
+    static navigationOptions = ({ navigation }) => {
+        return {
+            title: '11MyTitle',
+        };
+   };
      render(){
          return(
              <View style={sytles.container}>

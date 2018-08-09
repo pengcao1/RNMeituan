@@ -5,26 +5,28 @@
 
 import React, {PureComponent} from 'react'
 import {StyleSheet,View,Image,Text} from 'react-native'
-import {TabNavigator, createBottomTabNavigator} from 'react-navigation'
+import {createStackNavigator, createBottomTabNavigator} from 'react-navigation'
 import TabBarItem from './ui/TabBarItem'
 import HomeSence from './Home/HomeSence'
 import NearBySence from './NearBy/NearBySence'
 import OrderSence from './Order/OrderSnece'
 import MineSence from './Mine/MineSence'
 import Color from './ui/Color'
+import WebSence from './web/WebSence'
 
 class RootSence extends PureComponent{
     render(){
         return(
-            <Tab/>
+            <Navigator/>
         )
     }
 }
 
 const Tab = createBottomTabNavigator({
-    Home:{ 
+    Home:{
         screen:HomeSence,
-        navigationOptions: () =>({
+        navigationOptions:{
+            tabBarVisible:true,
             tabBarLabel:'Meituan',
             tabBarIcon:({focused,tintColor})=> (
                 <TabBarItem
@@ -34,7 +36,7 @@ const Tab = createBottomTabNavigator({
                 selectedImage={require('./img/tabbar/tabbar_homepage_selected.png')}
                 />
             )
-        })
+        }
 
     },
     NearBy:{
@@ -86,10 +88,21 @@ const Tab = createBottomTabNavigator({
     swipeEnabled:true,
     tabBarOptions:{
         activeTintColor:Color.primary,
-        inactiveTintColor:Color.gray
+        inactiveTintColor:Color.gray,
+        style:{backgroundColor:'white'}
+    },
+})
+
+const Navigator = createStackNavigator({
+    Tab:{
+        screen: Tab,
     }
-}
-)
+},{
+    navigationOptions:{
+        headerTintColor:'green',
+        headerMode: 'auto'
+    }
+})
 
 
 const styles = StyleSheet.create({
