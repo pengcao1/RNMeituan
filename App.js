@@ -6,13 +6,13 @@
  * @flow
  */
 
-import React, {Component} from 'react';
-import HomeStack          from "./src/HomeStack";
-type Props = {};
-export default class App extends Component<Props> {
+import React, {Component} from 'react'
+// import HomeStack          from "./src/HomeStack"
+import RootSence from "./src/RootSence"
+export default class App extends Component {
   render() {
     return (
-        <HomeStack/>
+        <RootSence/>
     );
   }
 }

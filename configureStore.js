@@ -10,7 +10,7 @@ const logger = createLogger({
     }
 );
 
-const middlewares:Middleware[] =[
+const middlewares: Middleware[] =[
     logger,
 ];
 

@@ -11,7 +11,7 @@ export class ClassItem extends React.Component {
     render(){
         return(
             <TouchableOpacity style={styles.container}>
-                <Image source={require('../img/skill-restaurant.png')}>
+                <Image source={require('../img/tabbar/tabbar_mine.png')}>
                 </Image>
                 <Text>
                    This is ClassItem

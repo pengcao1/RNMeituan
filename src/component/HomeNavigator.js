@@ -60,8 +60,6 @@ export default  HomeNavigator = createBottomTabNavigator({
         inactiveTintColor: color.gray,
     },
     animationEnabled: true,
-    swipeEnabled: false,
-    //是否可以滑动切换
     swipeEnabled: true,
     //切换是否有动画
     animationEnabled: true,
