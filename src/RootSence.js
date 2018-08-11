@@ -4,7 +4,7 @@
  */
 
 import React, {PureComponent} from 'react'
-import {StyleSheet,View,Image,Text} from 'react-native'
+import {StyleSheet,View,Image,Text, TouchableOpacity} from 'react-native'
 import {createStackNavigator, createBottomTabNavigator} from 'react-navigation'
 import TabBarItem from './ui/TabBarItem'
 import HomeSence from './Home/HomeSence'
@@ -95,6 +95,21 @@ const Tab = createBottomTabNavigator({
 const Navigator = createStackNavigator({
     Tab:{
         screen: Tab,
+        navigationOptions: () => ({
+            headerRight: (<View style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "flex-start",
+                alignItems: "center",
+            }}>
+                <TouchableOpacity onPress={() =>{
+                    console.log("HomeSence navigation press")
+                }}>
+                <Image source={require('./img/public/icon_navigationItem_share.png')} style={{width: 25, height: 25}}/>
+                </TouchableOpacity>
+              </View>),
+            headerLeft: <View />,
+        }),
     }
 },{
     navigationOptions:{
