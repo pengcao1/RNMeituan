@@ -103,12 +103,18 @@ const Navigator = createStackNavigator({
                 alignItems: "center",
             }}>
                 <TouchableOpacity onPress={() =>{
-                    console.log("HomeSence navigation press")
+                    console.log("HomeSence navigationRight press")
                 }}>
                 <Image source={require('./img/public/icon_navigationItem_share.png')} style={{width: 25, height: 25}}/>
                 </TouchableOpacity>
               </View>),
-            headerLeft: <View />,
+            headerLeft: (<View>
+                    <TouchableOpacity onPress={() =>{
+                        console.log("HomeSence navigationLeft press")
+                    }}>
+                    <Image source={require('./img/public/icon_navigationItem_share.png')} style={{width: 25, height: 25}}/>
+                    </TouchableOpacity>
+                </View>),
         }),
     }
 },{
