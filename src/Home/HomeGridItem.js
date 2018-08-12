@@ -17,8 +17,8 @@ class HomeGridItem extends React.Component<Props,State>{
     render(){
         const {info}=this.props
 
-        const title = info.mtitle
-        const subtitle = info.smstitle
+        const title = info.mname
+        const subtitle = info.mtitle
         const imageUrl = info.imgurl.replace('w.h','120.0')
         return(
             <TouchableOpacity style={style.container}>
