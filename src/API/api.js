@@ -19,3 +19,4 @@ export const menuInfos=[
     {title: 'KTV', icon: require('../img/home/icon_homepage_ktv_category.png')},
     
 ]
+export const GET_DISCOUNT='http://api.meituan.com/group/v1/recommend/homepage/city/1';

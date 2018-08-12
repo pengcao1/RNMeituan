@@ -8,12 +8,13 @@
  import * as api from '../API/api'
  import Color from '../ui/Color'
  import NativationItem from '../ui/NavigationItem'
+ import HomeGirdItem from './HomeGirdItem'
 
  type Props = {
 
  }
  type State = {
-
+     discounts?:Array<Object>,
  }
 
  class HomeSence extends React.Component<Props,State>{
@@ -44,6 +45,14 @@
             ),
         };
    };
+
+   constructor(props:Object){
+       super(props)
+       this.state = {
+           discounts:[],
+       }
+   }
+
      render(){
          console.log("HomeMenuVIew " + api.menuInfos[0].title);
          console.log("HomeMenuVIew 11=" + require('../img/home/icon_homepage_food_category.png'));
@@ -56,8 +65,34 @@
                         alert("click index = " +index)
                     }}
                 />
+                <View style ={{height:14,backgroundColor:Color.paper}} />
+                <View style={sytles.gridContainer}>
+                {this.state.discounts.map((info,index) => (
+                    <HomeGirdItem
+                        key={index}
+                        info={info}
+                    />
+                ))}
+                </View>
              </View>
          )
+     }
+
+     componentDidMount(){
+         console.log("componentDidMount")
+         this.requestData();
+     }
+     requestData = async () => {
+         try{
+            console.log("HomeSence request data = " + api.GET_DISCOUNT)
+             const reponse = await fetch(api.GET_DISCOUNT)
+             const json = await reponse.json()
+             this.setState({discounts:json.data})
+             console.log("HomeSence request data = " + JSON.stringify(json.data))
+         }catch(error){
+             console.log("HomeSence request data error " +JSON.stringify(error))
+             alert("error " +error)
+         }
      }
  }
 
@@ -85,5 +120,12 @@
      searchText:{
          fontSize:14,
      },
+     gridContainer:{
+         flexDirection:'row',
+         flexWrap:'wrap',
+         borderTopWidth: StyleSheet.hairlineWidth,
+         borderLeftWidth: StyleSheet.hairlineWidth,
+         borderColor: Color.bodar,
+     }
  });
  export default HomeSence
