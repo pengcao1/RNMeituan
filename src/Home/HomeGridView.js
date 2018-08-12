@@ -5,7 +5,7 @@
  import React, {Component} from 'react'
  import {StyleSheet, View, Image, Text} from 'react-native'
  import Color from '../ui/Color'
- import HomeGirdItem from './HomeGirdItem'
+ import HomeGridItem from './HomeGridItem'
  
  type Props = {
      infos: Array<Object>
@@ -18,7 +18,7 @@
          return(
             <View style={styles.gridContainer}>
                 {infos.map((info,index) => (
-                    <HomeGirdItem
+                    <HomeGridItem
                         key={index}
                         info={info}
                     />

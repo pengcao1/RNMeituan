@@ -13,7 +13,7 @@ type State = {
 
 }
 
-class HomeGirdItem extends React.Component<Props,State>{
+class HomeGridItem extends React.Component<Props,State>{
     render(){
         const {info}=this.props
 
@@ -68,4 +68,4 @@ const style = StyleSheet.create({
         marginRight: 10,
     }
 });
-export default HomeGirdItem
+export default HomeGridItem

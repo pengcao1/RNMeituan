@@ -7,7 +7,7 @@
  import HomeMenuView from './HomeMenuView'
  import * as api from '../API/api'
  import NativationItem from '../ui/NavigationItem'
- import HomeGirdItem from './HomeGirdItem'
+ import HomeGridItem from './HomeGridItem'
  import HomeGridView from './HomeGridView'
 import Color from '../ui/Color'
 
