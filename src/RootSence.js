@@ -20,21 +20,25 @@ class RootSence extends PureComponent{
         )
     }
 }
-const Navigator = createStackNavigator({
+const HomeSeenNavigator = createStackNavigator({
     Home:{
         screen:HomeSence,
     },
+});
+const NearBySenceNavigator = createStackNavigator({
     NearBy:{
         screen:NearBySence,
-    },
+    }
+});
+const MineSenceNavigator = createStackNavigator({
     Mine:{
         screen:MineSence,
     }
 });
 
 const Tab = createBottomTabNavigator({
-    Navigator1:{
-        screen:Navigator,
+    TabHome:{
+        screen:HomeSeenNavigator,
         navigationOptions:{
         tabBarVisible:true,
         tabBarLabel:'Meituan',
@@ -44,6 +48,36 @@ const Tab = createBottomTabNavigator({
             focused={focused}
             normalImage={require('./img/tabbar/tabbar_homepage.png')}
             selectedImage={require('./img/tabbar/tabbar_homepage_selected.png')}
+            />
+        )
+        }
+    },
+    TabNearBy:{
+        screen:NearBySenceNavigator,
+        navigationOptions:{
+        tabBarVisible:true,
+        tabBarLabel:'NearBy',
+        tabBarIcon:({focused,tintColor})=> (
+            <TabBarItem
+            tintColor={tintColor}
+            focused={focused}
+            normalImage={require('./img/tabbar/tabbar_discover.png')}
+            selectedImage={require('./img/tabbar/tabbar_discover_selected.png')}
+            />
+        )
+        }
+    },
+    TabMine:{
+        screen:MineSenceNavigator,
+        navigationOptions:{
+        tabBarVisible:true,
+        tabBarLabel:'My',
+        tabBarIcon:({focused,tintColor})=> (
+            <TabBarItem
+            tintColor={tintColor}
+            focused={focused}
+            normalImage={require('./img/tabbar/tabbar_mine.png')}
+            selectedImage={require('./img/tabbar/tabbar_mine_selected.png')}
             />
         )
         }

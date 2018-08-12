@@ -13,6 +13,11 @@ type State = {
 }
 
 class MineSence extends PureComponent<Props,State>{
+    static navigationOptions = ({ navigation }) => {
+        return{
+            headerTitle:"MineSence",
+        }
+    }
     render(){
         return(
             <View style={styles.container}>

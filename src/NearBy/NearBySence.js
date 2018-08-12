@@ -13,6 +13,11 @@ type State = {
 }
 
 class NearBySence extends PureComponent<Props,State>{
+    static navigationOptions = ({ navigation }) => {
+        return{
+            headerTitle:"NearBySence",
+        }
+    }
     render(){
         return(
             <View style={styles.container}>
