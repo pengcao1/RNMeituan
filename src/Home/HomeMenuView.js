@@ -4,6 +4,7 @@
 import React, {Component} from 'react'
 import {StyleSheet, View, Image, Text,Dimensions} from 'react-native'
 import HomeMenuItem from './HomeMenuItem'
+import screen from '../common/screen'
 
 type Props = {
     menuInfos:Array<Object>,
@@ -53,7 +54,7 @@ const sytles = StyleSheet.create({
     },
     itemsView:{
         flexDirection: 'row',
-        width:Dimensions.get('window').width,
+        width:screen.width,
         flexWrap:'wrap'
     }
 });

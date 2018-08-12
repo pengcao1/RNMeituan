@@ -3,6 +3,7 @@
 
 import React, {Component} from 'react'
 import {StyleSheet, View, Image, Text, TouchableOpacity, Dimensions} from 'react-native'
+import screen from '../common/screen'
 
 type Props = {
     title:string,
@@ -31,12 +32,12 @@ const sytles = StyleSheet.create({
     container:{
         justifyContent:'center',
         alignItems:'center',
-        width:Dimensions.get('window').width/5,
-        height:Dimensions.get('window').width/5,
+        width:screen.width/5,
+        height:screen.width/5,
     },
     icon:{
-        width:Dimensions.get('window').width/9,
-        height:Dimensions.get('window').width/9,
+        width:screen.width/9,
+        height:screen.width/9,
         margin: 5,
         overflow:"visible"
     }
