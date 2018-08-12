@@ -9,7 +9,8 @@
  import NativationItem from '../ui/NavigationItem'
  import HomeGridItem from './HomeGridItem'
  import HomeGridView from './HomeGridView'
-import Color from '../ui/Color'
+ import Color from '../ui/Color'
+ import SpaceView from '../ui/SpaceView'
 
  type Props = {
 
@@ -66,8 +67,9 @@ import Color from '../ui/Color'
                         alert("click index = " +index)
                     }}
                 />
-                <View style={{height:14,backgroundColor:Color.paper}} />
+                <SpaceView/>
                 <HomeGridView infos={this.state.discounts}/>
+                <SpaceView/>
              </View>
          )
      }
@@ -82,7 +84,7 @@ import Color from '../ui/Color'
              const reponse = await fetch(api.GET_DISCOUNT)
              const json = await reponse.json()
              this.setState({discounts:json.data})
-             console.log("HomeSence request data = " + JSON.stringify(json.data))
+            // console.log("HomeSence request data = " + JSON.stringify(json.data))
          }catch(error){
              console.log("HomeSence request data error " +JSON.stringify(error))
              alert("error " +error)

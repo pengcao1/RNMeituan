@@ -26,6 +26,7 @@
      render(){
          const {infos} = this.props
          const pageCount = Math.ceil(infos.length/2)
+         console.log("pageCount :" + pageCount);
          const favElements = infos.map((info,index) =>{
              return(
                  <HomeGridItem
