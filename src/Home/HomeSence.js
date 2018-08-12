@@ -51,8 +51,9 @@
              <View >
                 <HomeMenuView
                     menuInfos={api.menuInfos}
-                    onMenuSelect={()=>{
-                        console.log("clicl")
+                    onMenuSelect={(index)=>{
+                        console.log("click index = " + index);
+                        alert("click index = " +index)
                     }}
                 />
              </View>

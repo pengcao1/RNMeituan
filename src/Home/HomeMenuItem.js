@@ -20,7 +20,7 @@ class HomeMenuItem extends React.Component<Props,State>{
         console.log("HomeMenuItem = " + JSON.stringify(title));
         console.log("HomeMenuItem = " + JSON.stringify(icon));
         return(
-            <TouchableOpacity style={sytles.container}>
+            <TouchableOpacity style={sytles.container} onPress={onPress}>
                 <Image source={icon} style={{width: 25, height: 25}}/>
                 <Text>{title}</Text>
             </TouchableOpacity>

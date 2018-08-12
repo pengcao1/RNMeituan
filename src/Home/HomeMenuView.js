@@ -38,6 +38,7 @@ class HomeMenuView extends React.Component<Props,State>{
                 title={info.title}
                 icon={info.icon}
                 onPress={()=>{
+                    onMenuSelect(index);
                    console.log("HomeMenuView onPress")
                 }}
             />
