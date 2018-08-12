@@ -51,7 +51,7 @@ class HomeMenuView extends React.Component<Props,State>{
             let menuView = (
                 <View
                     key={i}
-                    style={sytles.itemsView}>
+                    style={styles.itemsView}>
                     {elementsPerPage}
                 </View>
             )
@@ -59,7 +59,7 @@ class HomeMenuView extends React.Component<Props,State>{
         }
 
         return(
-            <View style={sytles.container}>
+            <View style={styles.container}>
                 <ScrollView
                 horizontal
                 pagingEnabled
@@ -69,7 +69,7 @@ class HomeMenuView extends React.Component<Props,State>{
                 {menuViews}
                 </ScrollView>
                 <PageControl
-                    style={sytles.pageControl}
+                    style={styles.pageControl}
                     numberOfPages={pageCount}
                     currentPage={this.state.currentPage}
                     pageIndicatorTintColor='gray'
@@ -87,7 +87,7 @@ class HomeMenuView extends React.Component<Props,State>{
     }
 }
 
-const sytles = StyleSheet.create({
+const styles = StyleSheet.create({
     container:{
         backgroundColor:'white',
     },

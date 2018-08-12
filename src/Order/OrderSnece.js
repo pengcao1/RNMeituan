@@ -15,7 +15,7 @@ type State = {
 class OrderSence extends PureComponent<Props,State>{
     render(){
         return(
-            <View style={sytles.container}>
+            <View style={styles.container}>
                <Text>
                    This is Order
                </Text>
@@ -24,7 +24,7 @@ class OrderSence extends PureComponent<Props,State>{
     }
 }
 
-const sytles = StyleSheet.create({
+const styles = StyleSheet.create({
     container:{
         flex:1,
         justifyContent:'center',

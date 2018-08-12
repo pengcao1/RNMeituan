@@ -6,9 +6,10 @@
  import {StyleSheet, View, Image, Text, TouchableOpacity, Dimensions} from 'react-native'
  import HomeMenuView from './HomeMenuView'
  import * as api from '../API/api'
- import Color from '../ui/Color'
  import NativationItem from '../ui/NavigationItem'
  import HomeGirdItem from './HomeGirdItem'
+ import HomeGridView from './HomeGridView'
+import Color from '../ui/Color'
 
  type Props = {
 
@@ -22,9 +23,9 @@
         return {
             headerStyle:{backgroundColor:Color.primary},
             headerTitle:(
-                <TouchableOpacity style={sytles.searchBar} >
-                    <Image source={require('../img/home/search_icon.png')} style={sytles.searchIcon}/>
-                    <Text style={sytles.searchText}>搜索</Text>
+                <TouchableOpacity style={styles.searchBar} >
+                    <Image source={require('../img/home/search_icon.png')} style={styles.searchIcon}/>
+                    <Text style={styles.searchText}>搜索</Text>
                 </TouchableOpacity>
             ),
             headerLeft:(
@@ -65,15 +66,8 @@
                         alert("click index = " +index)
                     }}
                 />
-                <View style ={{height:14,backgroundColor:Color.paper}} />
-                <View style={sytles.gridContainer}>
-                {this.state.discounts.map((info,index) => (
-                    <HomeGirdItem
-                        key={index}
-                        info={info}
-                    />
-                ))}
-                </View>
+                <View style={{height:14,backgroundColor:Color.paper}} />
+                <HomeGridView infos={this.state.discounts}/>
              </View>
          )
      }
@@ -96,7 +90,7 @@
      }
  }
 
- const sytles = StyleSheet.create({
+ const styles = StyleSheet.create({
      container:{
          flex:1,
          justifyContent:'center',

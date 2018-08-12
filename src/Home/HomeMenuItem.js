@@ -20,7 +20,7 @@ class HomeMenuItem extends React.Component<Props,State>{
         console.log("HomeMenuItem = " + JSON.stringify(title));
         console.log("HomeMenuItem = " + JSON.stringify(icon));
         return(
-            <TouchableOpacity style={sytles.container} onPress={onPress}>
+            <TouchableOpacity style={styles.container} onPress={onPress}>
                 <Image source={icon} style={{width: 25, height: 25}}/>
                 <Text>{title}</Text>
             </TouchableOpacity>
@@ -28,7 +28,7 @@ class HomeMenuItem extends React.Component<Props,State>{
     }
 }
 
-const sytles = StyleSheet.create({
+const styles = StyleSheet.create({
     container:{
         justifyContent:'center',
         alignItems:'center',
