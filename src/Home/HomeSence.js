@@ -56,8 +56,6 @@
    }
 
      render(){
-         console.log("HomeMenuVIew " + api.menuInfos[0].title);
-         console.log("HomeMenuVIew 11=" + require('../img/home/icon_homepage_food_category.png'));
          return(
              <View >
                 <HomeMenuView
@@ -81,10 +79,15 @@
      requestData = async () => {
          try{
             console.log("HomeSence request data = " + api.GET_DISCOUNT)
+            // fetch(api.GET_DISCOUNT)
+            // .then(res => res.json())
+            // .then(data => this.setState({
+            //     discounts:data
+            // }));
              const reponse = await fetch(api.GET_DISCOUNT)
              const json = await reponse.json()
              this.setState({discounts:json.data})
-            // console.log("HomeSence request data = " + JSON.stringify(json.data))
+            console.log("HomeSence request data = " + JSON.stringify(json.data))
          }catch(error){
              console.log("HomeSence request data error " +JSON.stringify(error))
              alert("error " +error)
