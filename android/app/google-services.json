@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "861338207741",
+    "firebase_url": "https://123caopeng.firebaseio.com",
+    "project_id": "123caopeng",
+    "storage_bucket": "123caopeng.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:861338207741:android:a838f4757560f56a",
+        "android_client_info": {
+          "package_name": "com.rnmeituan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "861338207741-r10qggsnac641e3jtfddp3nl10iltv4e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAmuL7iIl94INf46zwvavqwvq9fUPnr7k"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

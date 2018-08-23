@@ -27,6 +27,9 @@ class NearBySence extends PureComponent<Props,State>{
             </View>
         )
     }
+    componentDidMount(){
+        firebase.analysis().logEvent("ssss");
+    }
 }
 
 const styles = StyleSheet.create({
