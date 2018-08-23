@@ -28,7 +28,6 @@ class NearBySence extends PureComponent<Props,State>{
         )
     }
     componentDidMount(){
-        firebase.analysis().logEvent("ssss");
     }
 }
 
