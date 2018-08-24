@@ -60,6 +60,7 @@
    }
 
      render(){
+         console.log("HomeSence .. render fetchInfoData ",this.props.fetchInfoData)
          return(
              <View >
                 <HomeMenuView
@@ -70,7 +71,8 @@
                     }}
                 />
                 <SpaceView/>
-                <HomeGridView infos={this.state.discounts}/>
+                {this.props.fetchInfoData &&
+                    <HomeGridView infos = {this.props.fetchInfoData}/>}
                 <SpaceView/>
              </View>
          )
@@ -79,20 +81,6 @@
      componentDidMount(){
          console.log("componentDidMount")
          this.props.fetchInfos();
-         //this.requestData();
-     }
-
-     requestData = async () => {
-         try{
-            console.log("HomeSence request data = " + api.GET_DISCOUNT)
-             const reponse = await fetch(api.GET_DISCOUNT)
-             const json = await reponse.json()
-             this.setState({discounts:json.data})
-            //console.log("HomeSence request data = " + JSON.stringify(json.data))
-         }catch(error){
-             console.log("HomeSence request data error " +JSON.stringify(error))
-             alert("error " +error)
-         }
      }
  }
 
@@ -128,4 +116,12 @@
          borderColor: Color.bodar,
      }
  });
- export default connect(null, {fetchInfos})(HomeSence)
+
+
+ const mapStateToProps = state => ({
+     fetchInfoData: state.payload
+ })
+
+ export default connect(mapStateToProps, {
+     fetchInfos
+ })(HomeSence)
