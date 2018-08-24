@@ -17,8 +17,6 @@ type State = {
 class HomeMenuItem extends React.Component<Props,State>{
     render(){
         let {title,icon,onPress} = this.props
-        console.log("HomeMenuItem = " + JSON.stringify(title));
-        console.log("HomeMenuItem = " + JSON.stringify(icon));
         return(
             <TouchableOpacity style={styles.container} onPress={onPress}>
                 <Image source={icon} style={{width: 25, height: 25}}/>

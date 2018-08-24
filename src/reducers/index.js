@@ -1,9 +1,6 @@
 import { combineReducers } from "redux";
-import fetchInfos from "./fetchInfos"
-import visibilityFilter form "./visibilityFilter"
+import getInfoReducer from "./getInfoReducer"
 
-
-export default combineReducers({
-    fetchInfos,
-    visibilityFilter
+export default const rootReducer = combineReducers({
+    getInfo: getInfoReducer
 })

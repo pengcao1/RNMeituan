@@ -11,6 +11,10 @@
  import HomeGridView from './HomeGridView'
  import Color from '../ui/Color'
  import SpaceView from '../ui/SpaceView'
+ import {
+     fetchInfos
+ } from "../actions/getInfoAction";
+ import { connect } from "react-redux";
 
  type Props = {
 
@@ -74,20 +78,17 @@
 
      componentDidMount(){
          console.log("componentDidMount")
-         this.requestData();
+         this.props.fetchInfos();
+         //this.requestData();
      }
+
      requestData = async () => {
          try{
             console.log("HomeSence request data = " + api.GET_DISCOUNT)
-            // fetch(api.GET_DISCOUNT)
-            // .then(res => res.json())
-            // .then(data => this.setState({
-            //     discounts:data
-            // }));
              const reponse = await fetch(api.GET_DISCOUNT)
              const json = await reponse.json()
              this.setState({discounts:json.data})
-            console.log("HomeSence request data = " + JSON.stringify(json.data))
+            //console.log("HomeSence request data = " + JSON.stringify(json.data))
          }catch(error){
              console.log("HomeSence request data error " +JSON.stringify(error))
              alert("error " +error)
@@ -127,4 +128,4 @@
          borderColor: Color.bodar,
      }
  });
- export default HomeSence
+ export default connect(null, {fetchInfos})(HomeSence)
