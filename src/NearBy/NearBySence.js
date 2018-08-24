@@ -4,6 +4,13 @@
 
 import React, {PureComponent} from 'react'
 import {StyleSheet, View, Image, Text} from 'react-native'
+ import {
+     connect
+ } from "react-redux";
+ import HomeMenuView from "../Home/HomeMenuView"
+ import HomeGridView from "../Home/HomeGridView"
+ import SpaceView from "../ui/SpaceView";
+ import * as api from "../API/api";
 
 type Props = {
 
@@ -20,11 +27,19 @@ class NearBySence extends PureComponent<Props,State>{
     }
     render(){
         return(
-            <View style={styles.container}>
-               <Text>
-                   This is NearBy
-               </Text>
-            </View>
+              <View >
+                <HomeMenuView
+                    menuInfos={api.menuInfos}
+                    onMenuSelect={(index)=>{
+                        console.log("click index = " + index);
+                        alert("click index = " +index)
+                    }}
+                />
+                <SpaceView/>
+                {this.props.fetchInfoData &&
+                    <HomeGridView infos = {this.props.fetchInfoData}/>}
+                <SpaceView/>
+             </View>
         )
     }
     componentDidMount(){
@@ -38,4 +53,7 @@ const styles = StyleSheet.create({
         alignItems:'center',
     }
 });
-export default NearBySence
+ const mapStateToProps = state => ({
+     fetchInfoData: state.payload
+ })
+ export default connect(mapStateToProps)(NearBySence);
