@@ -3,7 +3,16 @@
  */
 
  import React, {Component} from 'react'
- import {StyleSheet, View, Image, Text, TouchableOpacity, Dimensions, FlatList} from 'react-native'
+ import {
+     StyleSheet,
+     View,
+     Image,
+     Text,
+     TouchableOpacity,
+     Dimensions,
+     FlatList,
+     Platform
+ } from 'react-native'
  import HomeMenuView from './HomeMenuView'
  import * as api from '../API/api'
  import NativationItem from '../ui/NavigationItem'
@@ -15,6 +24,7 @@
  } from "../actions/getInfoAction";
  import { connect } from "react-redux";
 import GroupPurchaseCell from '../GroupPurchase/GroupPurchaseCell';
+import screen from "../common/screen"
 
  type Props = {
 
@@ -65,7 +75,7 @@ import GroupPurchaseCell from '../GroupPurchase/GroupPurchaseCell';
             <View style={{flex:1}}>
             <FlatList
                 ListHeaderComponent={() =>this.getHomeHeader()}
-                data={[{title:"1",key:1},{title:"2",key:2}]}
+                data={[{title:"1",key:1}]}
                 renderItem={this.renderItem}
                 keyExtractor = {(item, index) => index.toString()}
             />
@@ -74,7 +84,22 @@ import GroupPurchaseCell from '../GroupPurchase/GroupPurchaseCell';
     }
     renderItem = (rowData) =>{
         return(
-            <GroupPurchaseCell/>
+            <FlatList
+            horizontal
+            data={[{title:"1",key:1},{title:"2",key:2},{title:"3",key:3}]}
+            renderItem={this.leftRightRenderItem}
+            ItemSeparatorComponent={Platform.OS !== 'android' && (({highlighted}) => (
+                <View style={[highlighted && {marginLeft: 0}]} />
+            ))}
+            keyExtractor={(item,idx) => idx.toString()}/>
+        )
+    }
+
+    leftRightRenderItem = (rowData, separators) => {
+        return(
+            <View style={{flex:1,width:screen.width}}>
+                <Text>This is Left and Right swip={rowData.item.title}</Text>
+            </View>
         )
     }
     getHomeHeader = () => {
