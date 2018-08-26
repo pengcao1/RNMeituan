@@ -14,7 +14,6 @@ export function fetchInfos() {
                     type: FETCH_GETS,
                     payload: info.data
                 })
-            }
-            )
+            })
     }
 }

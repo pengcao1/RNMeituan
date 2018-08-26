@@ -10,6 +10,5 @@ export default HomeStack = createStackNavigator({
         }
     },
 }, {
-    //default
     initialRouteName: 'Homes'
 });
