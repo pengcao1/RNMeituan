@@ -3,7 +3,7 @@
  */
 
  import React, {Component} from 'react'
- import {StyleSheet, View, Image, Text, TouchableOpacity, Dimensions} from 'react-native'
+ import {StyleSheet, View, Image, Text, TouchableOpacity, Dimensions, FlatList} from 'react-native'
  import HomeMenuView from './HomeMenuView'
  import * as api from '../API/api'
  import NativationItem from '../ui/NavigationItem'
@@ -61,20 +61,37 @@
      render(){
          console.log("HomeSence .. render fetchInfoData ",this.props.fetchInfoData)
          return(
-             <View>
+            <View style={{flex:1}}>
+            <FlatList
+                ListHeaderComponent={() =>this.getHomeHeader()}
+                data={[{title:"1",key:1},{title:"2",key:2}]}
+                renderItem={(rowData)=>(
+                    <Text>{rowData.item.title}</Text>
+                )}
+                keyExtractor = {(item, index) => index.toString()}
+            />
+            </View>
+         )
+     }
+
+     getHomeHeader = () => {
+         return(
+            <View>
                 <HomeMenuView
-                    menuInfos={api.menuInfos}
-                    onMenuSelect={(index)=>{
-                        console.log("click index = " + index);
-                        alert("click index = " +index)
-                    }}
-                />
+                menuInfos={api.menuInfos}
+                onMenuSelect={(index)=>{
+                console.log("click index = " + index);
+                alert("click index = " +index)
+                }}/>
                 <SpaceView/>
                 {this.props.fetchInfoData &&
-                    <HomeGridView infos = {this.props.fetchInfoData}/>}
+                <HomeGridView infos = {this.props.fetchInfoData}/>}
                 <SpaceView/>
-             </View>
-         )
+                <View style={{flex:1,backgroundColor:"#FFFFFF"}}>
+                    <Text>Divd of FlatList</Text>
+                </View>
+            </View>
+         );
      }
 
      componentDidMount(){
