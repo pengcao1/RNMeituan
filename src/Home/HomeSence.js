@@ -14,6 +14,7 @@
      fetchInfos
  } from "../actions/getInfoAction";
  import { connect } from "react-redux";
+import GroupPurchaseCell from '../GroupPurchase/GroupPurchaseCell';
 
  type Props = {
 
@@ -58,23 +59,25 @@
        }
    }
 
-     render(){
+    render(){
          console.log("HomeSence .. render fetchInfoData ",this.props.fetchInfoData)
          return(
             <View style={{flex:1}}>
             <FlatList
                 ListHeaderComponent={() =>this.getHomeHeader()}
                 data={[{title:"1",key:1},{title:"2",key:2}]}
-                renderItem={(rowData)=>(
-                    <Text>{rowData.item.title}</Text>
-                )}
+                renderItem={this.renderItem}
                 keyExtractor = {(item, index) => index.toString()}
             />
             </View>
          )
-     }
-
-     getHomeHeader = () => {
+    }
+    renderItem = (rowData) =>{
+        return(
+            <GroupPurchaseCell/>
+        )
+    }
+    getHomeHeader = () => {
          return(
             <View>
                 <HomeMenuView
