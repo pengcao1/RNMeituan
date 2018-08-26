@@ -1308,6 +1308,7 @@
 			baseConfigurationReference = 2A86890B92CBC3DD6BC7EBBA /* Pods-RNMeituan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = C49J3D23TD;
@@ -1329,6 +1330,7 @@
 			baseConfigurationReference = F8F38B23B8180483FBF7709C /* Pods-RNMeituan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = C49J3D23TD;
 				INFOPLIST_FILE = RNMeituan/Info.plist;
