@@ -7,7 +7,6 @@
  import HomeMenuView from './HomeMenuView'
  import * as api from '../API/api'
  import NativationItem from '../ui/NavigationItem'
- import HomeGridItem from './HomeGridItem'
  import HomeGridView from './HomeGridView'
  import Color from '../ui/Color'
  import SpaceView from '../ui/SpaceView'
@@ -62,7 +61,7 @@
      render(){
          console.log("HomeSence .. render fetchInfoData ",this.props.fetchInfoData)
          return(
-             <View >
+             <View>
                 <HomeMenuView
                     menuInfos={api.menuInfos}
                     onMenuSelect={(index)=>{

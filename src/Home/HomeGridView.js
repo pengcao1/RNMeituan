@@ -10,7 +10,8 @@
  import HomeGridItem from './HomeGridItem'
  
  type Props = {
-     infos: Array<Object>
+     infos: Array<Object>,
+     numPerPage?: number,
  }
  type State = {
      currentFavPage:number,
@@ -23,40 +24,38 @@
             currentFavPage:0,
         }
     }
-     render(){
-         console.log("this.props :", this.props);
-         const {infos} = this.props
-         const pageCount = Math.ceil(infos.length/2)
-         const favElements = infos.map((info,index) =>{
-             return(
-                 <HomeGridItem
-                    key={index}
-                    info={info}
-                 />
-             )
-         })
-         let favViews =[]
+    render(){
+        const {infos, numPerPage} = this.props;
+        const perPage = numPerPage ? numPerPage : 4;
+        const pageCount = Math.ceil(infos.length / perPage)
+        const favElements = infos.map((info,index) =>{
+            return(
+               <HomeGridItem
+                  key={index}
+                  info={info}
+                />
+            )}
+        )
 
+         let favViews =[]
          for (let i=0; i<pageCount; i++){
-             favViewPerPage = favElements.slice(i*2,i*2+2);
+             let favViewPerPage = favElements.slice(i * perPage, i * perPage + perPage);
              let favView = (
-                <View 
-                    key={i}
-                >
-                {favViewPerPage}
+                <View key={i}
+                    style={styles.itemsView}>
+                    {favViewPerPage}
                 </View>
              )
-             favViews.push(favViewPerPage)
+             favViews.push(favView);
          }
-         return(
+        return(
             <View style={styles.container}>
                 <ScrollView
                 horizontal
                 pagingEnabled
                 showsHorizontalScrollIndicator={false}
-                onScroll={this.onScroll}
-                >
-                {favViews}
+                onScroll={this.onScroll}>
+                    {favViews}
                 </ScrollView>
                 <PageControl
                     style={styles.pageControl}
@@ -66,8 +65,9 @@
                     currentPageIndicatorTintColor={Color.primary}
                 />
             </View>
-         )
-     }
+        )
+    }
+
      onScroll = (e) => {
          console.log("HomeGridView onScroll");
         const x = e.nativeEvent.contentOffset.x
@@ -75,7 +75,7 @@
         if( currentPage != this.state.currentFavPage ){
             this.setState({currentFavPage:currentPage})
         }
-    }
+     }
  }
 
  const styles = StyleSheet.create({
@@ -86,8 +86,13 @@
         borderLeftWidth: StyleSheet.hairlineWidth,
         borderColor: Color.bodar,
     },
-    pageControl:{
-        margin: 10,
+    container:{
+        backgroundColor:'white',
+    },
+    itemsView:{
+        flexDirection: 'row',
+        width:screen.width,
+        flexWrap:'wrap'
     },
  })
 

@@ -3,7 +3,13 @@
  */
 
 import React, {PureComponent} from 'react'
-import {StyleSheet, View, Image, Text} from 'react-native'
+import {
+    StyleSheet,
+    View,
+    Image,
+    Text,
+    ScrollView
+} from 'react-native'
  import {
      connect
  } from "react-redux";
@@ -27,22 +33,16 @@ class NearBySence extends PureComponent<Props,State>{
     }
     render(){
         return(
-              <View >
-                <HomeMenuView
-                    menuInfos={api.menuInfos}
-                    onMenuSelect={(index)=>{
-                        console.log("click index = " + index);
-                        alert("click index = " +index)
-                    }}
-                />
+              < View style = {{flex: 1,flexDirection: "row"}}>
                 <SpaceView/>
                 {this.props.fetchInfoData &&
-                    <HomeGridView infos = {this.props.fetchInfoData}/>}
+                    <HomeGridView
+                    infos = {this.props.fetchInfoData}
+                    numPerPage={10}
+                    />}
                 <SpaceView/>
              </View>
         )
-    }
-    componentDidMount(){
     }
 }
 
