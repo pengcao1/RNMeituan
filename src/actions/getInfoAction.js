@@ -1,6 +1,4 @@
-import {
-    FETCH_GETS
-} from "./types";
+import { FETCH_GETS } from "./types";
 import * as API from "../../src/API/api"
 
 export function fetchInfos() {
