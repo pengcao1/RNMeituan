@@ -3,7 +3,8 @@
  */
 
 import React, {PureComponent} from 'react'
-import {StyleSheet, View, Image, Text} from 'react-native'
+import {StyleSheet, View, Image, Text} from 'react-native';
+import Color from "../ui/Color";
 
 type Props = {
 
@@ -15,6 +16,9 @@ type State = {
 class MineSence extends PureComponent<Props,State>{
     static navigationOptions = ({ navigation }) => {
         return{
+            headerStyle: {
+                backgroundColor: Color.primary
+            },
             headerTitle:"MineSence",
         }
     }

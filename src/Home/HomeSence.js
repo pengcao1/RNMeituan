@@ -19,9 +19,7 @@
  import HomeGridView from './HomeGridView'
  import Color from '../ui/Color'
  import SpaceView from '../ui/SpaceView'
- import {
-     fetchInfos
- } from "../actions/getInfoAction";
+ import { fetchInfos } from "../actions/getInfoAction";
  import { connect } from "react-redux";
 import GroupPurchaseCell from '../GroupPurchase/GroupPurchaseCell';
 import screen from "../common/screen"
@@ -97,7 +95,7 @@ import screen from "../common/screen"
 
     leftRightRenderItem = (rowData, separators) => {
         return(
-            <View style={{flex:1,width:screen.width}}>
+            <View style={{flex:1,width:screen.width,backgroundColor:"#ffffff"}}>
                 <Text>This is Left and Right swip={rowData.item.title}</Text>
             </View>
         )

@@ -17,6 +17,7 @@ import {
  import HomeGridView from "../Home/HomeGridView"
  import SpaceView from "../ui/SpaceView";
  import * as api from "../API/api";
+ import Color from "../ui/Color";
 
 type Props = {
 
@@ -28,6 +29,9 @@ type State = {
 class NearBySence extends PureComponent<Props,State>{
     static navigationOptions = ({ navigation }) => {
         return{
+            headerStyle: {
+                backgroundColor: Color.primary
+            },
             headerTitle:"NearBySence",
         }
     }
