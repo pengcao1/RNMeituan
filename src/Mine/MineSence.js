@@ -32,7 +32,6 @@ class MineSence extends PureComponent<Props,State>{
         )
     }
 }
-
 const styles = StyleSheet.create({
     container:{
         flex:1,

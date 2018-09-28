@@ -164,6 +164,5 @@ import screen from "../common/screen"
      fetchInfoData: state.payload
  })
 
- export default connect(mapStateToProps, {
-     fetchInfos
- })(HomeSence)
+ // connect 参数含义
+ export default connect(mapStateToProps, {fetchInfos})(HomeSence)

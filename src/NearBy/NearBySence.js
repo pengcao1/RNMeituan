@@ -32,7 +32,7 @@ class NearBySence extends PureComponent<Props,State>{
             headerStyle: {
                 backgroundColor: Color.primary
             },
-            headerTitle:"NearBySence",
+            headerTitle:"NearBy",
         }
     }
     render(){
@@ -42,7 +42,7 @@ class NearBySence extends PureComponent<Props,State>{
                 {this.props.fetchInfoData &&
                     <HomeGridView
                     infos = {this.props.fetchInfoData}
-                    numPerPage={10}
+                    numPerPage={6}
                     />}
                 <SpaceView/>
              </View>
@@ -57,6 +57,7 @@ const styles = StyleSheet.create({
         alignItems:'center',
     }
 });
+
  const mapStateToProps = state => ({
      fetchInfoData: state.payload
  })

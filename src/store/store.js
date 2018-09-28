@@ -5,3 +5,4 @@ const initialState={};
 const middleware = [thunk];
 
 export const store = createStore(getInfoReducer, initialState, applyMiddleware(...middleware));
+const state = store.getState();
