@@ -14,7 +14,8 @@ import { store } from "./src/store/store"
 import Instabug from "instabug-reactnative";
 
 export default class App extends Component {
-  constructor(){
+  constructor(props){
+    super(props)
     Instabug.startWithToken("e17c926880b2a72ff5d65992e233dd74", [
       Instabug.invocationEvent.shake
     ]);
