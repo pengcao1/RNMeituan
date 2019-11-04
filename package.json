@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "lodash": ">=4.17.11",
+    "lodash": ">=4.17.13",
     "instabug-reactnative": "^8.0.17",
     "native-base": "^2.7.2",
     "react": "16.4.1",
@@ -31,7 +31,7 @@
     "babel-preset-react-native": "^5",
     "jest": "23.4.2",
     "react-test-renderer": "16.4.1",
-    "lodash": ">=4.17.11",
+    "lodash": ">=4.17.13",
     "merge": ">=1.2.1"
   },
   "jest": {
