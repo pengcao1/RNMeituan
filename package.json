@@ -7,7 +7,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "lodash": ">=4.17.13",
     "instabug-reactnative": "^8.0.17",
     "native-base": "^2.7.2",
